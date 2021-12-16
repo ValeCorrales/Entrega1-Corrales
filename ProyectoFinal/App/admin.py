@@ -7,3 +7,4 @@ from .models import *
 admin.site.register(Ciudades)
 admin.site.register(Restaurantes)
 admin.site.register(Alojamientos)
+admin.site.register(Comentario)
