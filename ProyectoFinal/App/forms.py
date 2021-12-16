@@ -19,3 +19,9 @@ class RestaurantesFormulario(forms.Form):
     nombre = forms.CharField(max_length=40)
     tipoDeComida = forms.CharField(max_length=40)
     calificacion = forms.IntegerField()
+    
+class ContactanosFormulario(forms.Form):
+    
+    nombreYApellido = forms.CharField(max_length=40)
+    mail = forms.CharField(max_length=40)
+    numeroDeTelefono = forms.IntegerField()

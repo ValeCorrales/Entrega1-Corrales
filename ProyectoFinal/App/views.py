@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from App.models import Ciudades, Restaurantes, Alojamientos
-from App.forms import AlojamientoFormulario, RestaurantesFormulario, CiudadesFormulario
+from App.models import Ciudades, Restaurantes, Alojamientos, Comentario
+from App.forms import AlojamientoFormulario, RestaurantesFormulario, CiudadesFormulario, ContactanosFormulario
 
 
 # Create your views here.
@@ -24,9 +24,9 @@ def alojamientos(request):
     
     return render(request, 'App/alojamientos.html')
 
-def dejaTuComentario(request):
+def contactanos(request):
     
-    return render(request, 'App/dejaTuComentario.html')
+    return render(request, 'App/contactanos.html')
 
 def alojamientoFormulario(request):
     
@@ -50,7 +50,6 @@ def alojamientoFormulario(request):
     
 def ciudadesFormulario(request):
     
-    #return render(request, 'App/alojamientoFormulario.html') - lo hacemos con django
     if request.method == "POST":
         miFormulario2 = CiudadesFormulario(request.POST)
         print(miFormulario2)
@@ -70,7 +69,7 @@ def ciudadesFormulario(request):
     
 def restaurantesFormulario(request):
     
-    #return render(request, 'App/alojamientoFormulario.html') - lo hacemos con django
+
     if request.method == "POST":
         miFormulario3 = RestaurantesFormulario(request.POST)
         print(miFormulario3)
@@ -86,6 +85,24 @@ def restaurantesFormulario(request):
     else:
         miFormulario3 = RestaurantesFormulario()
         return render(request, "App/restaurantesFormulario.html", {"miFormulario3":miFormulario3})
+    
+def contactanosFormulario(request):
+    
+    if request.method == "POST":
+        miFormulario4 = ContactanosFormulario(request.POST)
+        print(miFormulario4)
+        
+        if miFormulario4.is_valid():
+            informacion = miFormulario4.cleaned_data
+            contactanos = Comentario(nombreYApellido=informacion['nombreYApellido'], mail=informacion['mail'] ,numeroDeTelefono=informacion['numeroDeTelefono'])
+            
+            contactanos.save()
+            
+            return render(request, 'App/inicio.html')
+        
+    else:
+        miFormulario4 = ContactanosFormulario()
+        return render(request, "App/contactanos.html", {"miFormulario4":miFormulario4})
     
 
         
