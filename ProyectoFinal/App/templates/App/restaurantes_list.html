@@ -1,0 +1,46 @@
+{% extends "App/padre.html" %} 
+{% load static %} 
+
+    {% block contenidoNombre %}
+        <title> Leer restaurantes </title>
+    {% endblock %}
+
+
+        {% block contenidoTitulos %}
+                <span class="site-heading-upper text-primary mb-3"> Blog de viajes </span>
+                <span class="site-heading-lower"> Vea toda los restaurantes! </span>
+        {% endblock %}
+
+{% block contenidoInfo %}
+
+<ul>
+   
+    <a href="{% url 'RestaurantesNew' %}"> AGREGAR NUEVO RESTAURANT </a>
+    <BR><BR></BR></BR>
+
+   {% for restaurantes in object_list %}
+
+   <p style="color: aqua;"> Restaurant: {{ restaurantes.nombre }} </p>
+
+
+    <a href="{% url 'RestaurantesDetail' restaurantes.id %}">Ver mas</a>
+    <br>
+    <a href="{% url 'RestaurantesEdit' restaurantes.id %}">Editar</a>
+    <br>
+    <a href="{% url 'RestaurantesDelete' restaurantes.id %}">Eliminar</a>
+
+   <br>
+   <br>
+
+
+
+   {% endfor %}
+
+</ul>
+    
+{% endblock %}
+
+{% block infoExtra %}
+
+
+{% endblock %}

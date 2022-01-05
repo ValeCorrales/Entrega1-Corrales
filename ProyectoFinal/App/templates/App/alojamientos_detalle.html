@@ -1,0 +1,35 @@
+{% extends "App/padre.html" %} 
+{% load static %} 
+
+    {% block contenidoNombre %}
+        <title> Detalle alojamientos </title>
+    {% endblock %}
+
+
+        {% block contenidoTitulos %}
+                <span class="site-heading-upper text-primary mb-3"> Blog de viajes </span>
+                <span class="site-heading-lower"> Vea toda los alojamientos en detalle! </span>
+        {% endblock %}
+
+{% block contenidoInfo %}
+
+<ul>
+     
+   
+
+   <p style="color: aqua;">  Nombre: <i>{{ alojamientos.nombre }} </i></p>
+   <p style="color: whitesmoke;"> Tipo de alojamiento: <i> {{ alojamientos.tipoDeAlojamiento }} </i> </p>
+   <p style="color: whitesmoke;">Calificacion: <i> {{ alojamientos.calificacion }} </i> </p>
+
+   <p> <a href="{% url 'AlojamientosList' %}">Regresar</a> </p>
+
+
+
+</ul>
+    
+{% endblock %}
+
+{% block infoExtra %}
+
+
+{% endblock %}

@@ -1,5 +1,7 @@
 # Entrega1-Corrales/Renzi
 
+Participantes: Sol Renzi y Valentina Corrales
+
 Blog de Viajes - Descubriendo el Mundo
 
 La idea del blog es que los visitantes puedan aconsejar sobre Ciudades, Restaurantes y Alojamiento

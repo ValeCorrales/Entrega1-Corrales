@@ -2,13 +2,13 @@
 {% load static %} 
 
     {% block contenidoNombre %}
-        <title> Agregar ciudad </title>
+        <title> Formulario ciudad </title>
     {% endblock %}
 
 
     {% block contenidoTitulos %}
                 <span class="site-heading-upper text-primary mb-3">Blog de viajes</span>
-                <span class="site-heading-lower">Agregar ciudad</span>
+                <span class="site-heading-lower">Agregar/Modificar ciudad</span>
     {% endblock %}
 
 {% block contenidoInfo %}
@@ -17,15 +17,14 @@
 
 {% block infoExtra %}
 
-    <form action="" method="POST"> {% csrf_token %}
+    <form method="POST"> {% csrf_token %}
 
-        <table>
-
-            {{ miFormulario2.as_table }}
-
-        </table>
         
-        <input type="submit", value="Enviar!">
+        {{ form.as_p }}
+
+       
+        
+        <input type="submit", value="Agregar nueva o modificar ciudad!">
 
 
     </form>

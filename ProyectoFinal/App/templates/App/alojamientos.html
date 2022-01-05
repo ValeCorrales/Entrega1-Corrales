@@ -12,6 +12,11 @@
     {% endblock %}
 
 {% block contenidoInfo %}
+
+<li class="nav-item"><a href="{% url 'AlojamientosList' %}">  <h1 style="color: blue; text-align: center;"> CLICK AQUI para ver todos los alojamientos de nuestro blog! </h1> </a> </li>
+
+<h2 style="text-align: center; color: chartreuse; "> TOP 3 DE ALOJAMIENTOS: </h2>
+
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
@@ -69,8 +74,3 @@
 
 {% endblock %}
 
-{% block infoExtra %}
-
-<li class="nav-item px-lg-4"><a style="text-align: center" class="nav-link text-uppercase" href="{% url 'AlojamientoFormulario' %}">Agregar alojamiento</a></li>
-
-{% endblock %}
