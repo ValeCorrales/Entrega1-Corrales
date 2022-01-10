@@ -18,6 +18,14 @@ Ejecución
 
 - Modelamos ciudades, restaurantes y alojamientos, se puede navegar hacia ellos desde cualquier pagina.
 
-- Dentro de cada una de las paginas de los modelos se encuentra un formulario para agregar instancias a la base de datos. 
+- Dentro de cada una de las paginas de los modelos se encuentra un formulario para agregar instancias a la base de datos. También para consultar, editar o eliminar.
 
 - Modelamos tambien la entidad comentarios a la cual se le agregan registros desde el formulario de contacto.
+
+- Agregamos un about con información sobre nosotras.
+
+Valen se encargó del armado en general del proyecto. Estructura, armado de views, urls y templates.
+
+Sol se encargó del README, Test. Con respecto a la Web, agregó fotos y textos, corrigió errores en el código para el link de visualización de Base de datos, y los links de las instancias de modificación. 
+
+Vivimos en distintos paises, por lo que virtualmente estuvimos en contacto, mantuvimos reuniones y armamos juntas el video de demo y el login.
