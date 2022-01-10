@@ -1,0 +1,36 @@
+{% extends "App/padre.html" %} 
+{% load static %} 
+
+    {% block contenidoNombre %}
+        <title> Detalle ciudades </title>
+    {% endblock %}
+
+
+        {% block contenidoTitulos %}
+                <span class="site-heading-upper text-primary mb-3"> Blog de viajes </span>
+                <span class="site-heading-lower"> Vea toda las ciudades en detalle! </span>
+        {% endblock %}
+
+{% block contenidoInfo %}
+
+<ul>
+     
+   
+
+   <p style="color: aqua;">  Ciudad: <i>{{ ciudades.nombre }} </i></p>
+   <p style="color: whitesmoke;">Pais: <i> {{ ciudades.pais }} </i> </p>
+   <p style="color: whitesmoke;">Continente: <i> {{ ciudades.continente }}</i> </p>
+   <p style="color: whitesmoke;">Calificacion: <i> {{ ciudades.calificacion }} </i> </p>
+
+   <p> <a href="{% url 'CiudadesList' %}">Regresar</a> </p>
+
+
+
+</ul>
+    
+{% endblock %}
+
+{% block infoExtra %}
+
+
+{% endblock %}

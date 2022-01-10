@@ -1,0 +1,35 @@
+{% extends "App/padre.html" %} 
+{% load static %} 
+
+    {% block contenidoNombre %}
+        <title> Formulario ciudad </title>
+    {% endblock %}
+
+
+    {% block contenidoTitulos %}
+                <span class="site-heading-upper text-primary mb-3">Blog de viajes</span>
+                <span class="site-heading-lower">Agregar/Modificar ciudad</span>
+    {% endblock %}
+
+{% block contenidoInfo %}
+           
+{% endblock %}
+
+{% block infoExtra %}
+
+    <form method="POST"> {% csrf_token %}
+
+        
+        {{ form.as_p }}
+
+       
+        
+        <input type="submit", value="Agregar nueva o modificar ciudad!">
+
+
+    </form>
+
+{% endblock %}
+
+
+     

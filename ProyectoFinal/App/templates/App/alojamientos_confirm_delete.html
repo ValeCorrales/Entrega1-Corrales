@@ -1,0 +1,36 @@
+{% extends "App/padre.html" %} 
+{% load static %} 
+
+    {% block contenidoNombre %}
+        <title> Eliminar alojamiento </title>
+    {% endblock %}
+
+
+    {% block contenidoTitulos %}
+                <span class="site-heading-upper text-primary mb-3">Blog de viajes</span>
+                <span class="site-heading-lower">Confrimacion elimnar alojamiento</span>
+    {% endblock %}
+
+{% block contenidoInfo %}
+           
+{% endblock %}
+
+{% block infoExtra %}
+
+    <form method="POST"> {% csrf_token %}
+
+        Estas seguro que quieres eliminar el alojamiento: "{{object.nombre}}" ??
+
+            {{ form.as_p }}
+
+       
+        
+        <input type="submit", value="Ok - eliminar!!">
+
+
+    </form>
+
+{% endblock %}
+
+
+     

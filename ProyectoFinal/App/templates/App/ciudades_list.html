@@ -1,0 +1,47 @@
+{% extends "App/padre.html" %} 
+{% load static %} 
+
+    {% block contenidoNombre %}
+        <title> Leer ciudades </title>
+    {% endblock %}
+
+
+        {% block contenidoTitulos %}
+                <span class="site-heading-upper text-primary mb-3"> Blog de viajes </span>
+                <span class="site-heading-lower"> Vea toda las ciudades! </span>
+        {% endblock %}
+
+{% block contenidoInfo %}
+
+<ul>
+   
+    <a href="{% url 'CiudadesNew' %}"> AGREGAR NUEVA CIUDAD </a>
+    <BR><BR></BR></BR>
+
+   {% for ciudades in object_list %}
+
+   <p style="color: aqua;">Ciudad: {{ ciudades.nombre }} </p>
+
+   <p style="color: whitesmoke;">Pais: {{ ciudades.pais }} </p>
+
+    <a href="{% url 'CiudadesDetail' ciudades.id %}">Ver mas</a>
+    <br>
+    <a href="{% url 'CiudadesEdit' ciudades.id %}">Editar</a>
+    <br>
+    <a href="{% url 'CiudadesDelete' ciudades.id %}">Eliminar</a>
+
+   <br>
+   <br>
+
+
+
+   {% endfor %}
+
+</ul>
+    
+{% endblock %}
+
+{% block infoExtra %}
+
+
+{% endblock %}

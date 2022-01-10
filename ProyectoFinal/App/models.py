@@ -31,5 +31,11 @@ class Alojamientos(models.Model):
         return f"ALOJAMIENTO {self.nombre}, TIPO DE ALOJAMIENTO: {self.tipoDeAlojamiento}, CALIFICACION {self.calificacion}"
     
     
+class Comentario(models.Model):
+    
+    nombreYApellido = models.CharField(max_length=40)
+    mail = models.CharField(max_length=40)
+    numeroDeTelefono = models.IntegerField()
+    
 
     

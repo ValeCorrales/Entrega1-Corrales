@@ -12,20 +12,25 @@
     {% endblock %}
 
 {% block contenidoInfo %}
+
+<li class="nav-item"><a href="{% url 'AlojamientosList' %}">  <h1 style="color: burlywood; text-align: center;"> CLICK AQUI para ver todos los alojamientos de nuestro blog! </h1> </a> </li>
+
+<h2 style="text-align: center; color: chartreuse; "> TOP 3 DE ALOJAMIENTOS: </h2>
+
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
                     <div class="product-item-title d-flex">
                         <div class="bg-faded p-5 d-flex ms-auto rounded">
                             <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">Alojamiento 1</span>
-                                <span class="section-heading-lower">Hotel</span>
+                                <span class="section-heading-upper">Hotel</span>
+                                <span class="section-heading-lower">Novotel Lyon<br>  Confluence</span>
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/products-01.jpg' %}" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/Novotel Lyon Confluence.jpg' %}" alt="..." />
                     <div class="product-item-description d-flex me-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0"> Descripcion del alojamiento.</p></div>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0"> Novotel Lyon Confluence Hotel es una magnífica elección para viajeros que vayan a Lyon, ya que ofrece un ambiente de moda además de numerosos servicios diseñados para mejorar su estancia.</p></div>
                     </div>
                 </div>
             </div>
@@ -36,14 +41,14 @@
                     <div class="product-item-title d-flex">
                         <div class="bg-faded p-5 d-flex me-auto rounded">
                             <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">Alojamiento 2</span>
-                                <span class="section-heading-lower">Hostel</span>
+                                <span class="section-heading-upper">Hostel</span>
+                                <span class="section-heading-lower">West Side YMCA </span>
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/products-02.jpg' %}" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/West Side YMCA.jpg' %}" alt="..." />
                     <div class="product-item-description d-flex ms-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Descripcion del alojamiento.</p></div>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">Este albergue está situado en el Upper West Side de Manhattan, a 50 metros de Central Park y a solo 5 minutos a pie de Columbus Circle. Hay conexión WiFi gratuita.</p></div>
                     </div>
                 </div>
             </div>
@@ -54,14 +59,14 @@
                     <div class="product-item-title d-flex">
                         <div class="bg-faded p-5 d-flex ms-auto rounded">
                             <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">Alojamiento 3</span>
-                                <span class="section-heading-lower">Apartamento privado</span>
+                                <span class="section-heading-upper">Resort</span>
+                                <span class="section-heading-lower">HARD ROCK HOTEL CANCUN</span>
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/products-03.jpg' %}" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/HARD ROCK CANCUN.jpg' %}" alt="..." />
                     <div class="product-item-description d-flex me-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Descripcion del alojamiento.</p></div>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">En nuestro exclusivo hotel en Cancún hemos creado un paraíso frente al mar para que te sientas como toda una estrella, transformando las típicas vacaciones Todo Incluido en un paraíso de celebridades que reflejan nuestro increíble escenario Mexicano y estilo cosmopolita.</p></div>
                     </div>
                 </div>
             </div>
@@ -69,8 +74,3 @@
 
 {% endblock %}
 
-{% block infoExtra %}
-
-<li class="nav-item px-lg-4"><a style="text-align: center" class="nav-link text-uppercase" href="{% url 'AlojamientoFormulario' %}">Agregar alojamiento</a></li>
-
-{% endblock %}

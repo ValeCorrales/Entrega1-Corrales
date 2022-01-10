@@ -12,6 +12,11 @@
         {% endblock %}
 
 {% block contenidoInfo %}
+
+     <li class="nav-item"><a href="{% url 'CiudadesList' %}">  <h1 style="color: burlywood; text-align: center;"> CLICK AQUI para ver todas las ciudades de nuestro blog! </h1> </a> </li>
+
+    <h2 style="text-align: center; color: chartreuse; "> TOP 3 DE CIUDADES: </h2>
+
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
@@ -68,8 +73,3 @@
         </section>
 {% endblock %}
 
-{% block infoExtra %}
-
-<li class="nav-item px-lg-4"><a style="text-align: center" class="nav-link text-uppercase" href="{% url 'CiudadesFormulario' %}">Agregar ciudad</a></li>
-
-{% endblock %}

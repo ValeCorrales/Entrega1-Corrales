@@ -91,9 +91,7 @@ VERSION 5:
 
 Entiendo nos queda pendiente: cambiar el nombre como pedia la PPT, crear los models y los formularios - hacer el readme
 
-VERSION 6: 
 
-Armado Forms para Restaurantes, Ciudades y Alojamientos. Guardado en DB. Readme
 
 
 

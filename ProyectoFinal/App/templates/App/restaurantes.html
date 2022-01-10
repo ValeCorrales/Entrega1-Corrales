@@ -12,20 +12,26 @@
     {% endblock %}
      
 {% block contenidoInfo %}
+
+<li class="nav-item"><a href="{% url 'RestaurantesList' %}">  <h1 style="color: burlywood; text-align: center;"> CLICK AQUI para ver todas los restaurantes de nuestro blog! </h1> </a> </li>
+
+<h2 style="text-align: center; color: chartreuse; "> TOP 3 DE RESTAURANTES: </h2>
+
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
                     <div class="product-item-title d-flex">
                         <div class="bg-faded p-5 d-flex ms-auto rounded">
                             <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">Restaurante 1</span>
-                                <span class="section-heading-lower">Tipo de comida</span>
+                                <span class="section-heading-upper">Mexicana</span>
+                                <span class="section-heading-lower">La Lupita</span>
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/products-01.jpg' %}" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static '/App/assets/img/LA LUPITA.jpg' %}" alt="..." />
                     <div class="product-item-description d-flex me-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0"> Descripcion del restaurante.</p></div>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0"> Con más de una década viviendo y cocinando en México, Lupita ofrece en la Argentina una original propuesta de gastronomía latinoamericana.
+                            La acompañamos con una barra de cocktails creados por los mejores bartenders del país, una cuidada ambientación y el sello de una selección de música latina para lograr recrear en Lupita toda la magia de aquellas soñadas playas de la exclusiva Riviera Maya en el Caribe o de la extensa costa del Pacífico mexicano. </p></div>
                     </div>
                 </div>
             </div>
@@ -36,14 +42,14 @@
                     <div class="product-item-title d-flex">
                         <div class="bg-faded p-5 d-flex me-auto rounded">
                             <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">Restaurante 2</span>
-                                <span class="section-heading-lower">Tipo de comida</span>
+                                <span class="section-heading-upper">Nikkei & Sushi Bar</span>
+                                <span class="section-heading-lower">Fabric Sushi</span>
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/products-02.jpg' %}" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/FABRIC SUSHI.png' %}" alt="..." />
                     <div class="product-item-description d-flex ms-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Descripcion del restaurante.</p></div>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">Comida japonesa para despertar sentidos. Abrimos nuestras puertas en Palermo Hollywood en el año 2008, con nuestro primer resto, delivery & take away, teniendo como norte el brindar un nuevo concepto culinario en la Ciudad de Buenos Aires, ofreciendo máxima calidad al mejor precio posible.</p></div>
                     </div>
                 </div>
             </div>
@@ -54,23 +60,17 @@
                     <div class="product-item-title d-flex">
                         <div class="bg-faded p-5 d-flex ms-auto rounded">
                             <h2 class="section-heading mb-0">
-                                <span class="section-heading-upper">Restaurante 3</span>
-                                <span class="section-heading-lower">Tipo de comida</span>
+                                <span class="section-heading-upper">Americana</span>
+                                <span class="section-heading-lower">Kansas Grill & Bar</span>
                             </h2>
                         </div>
                     </div>
-                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/products-03.jpg' %}" alt="..." />
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'App/assets/img/KANSAS.png' %}" alt="..." />
                     <div class="product-item-description d-flex me-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Descripcion del restaurante.</p></div>
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">Kansas es un restaurant de Contemporary American Cuisine. El primer Restaurant fue inaugurado en Junio de 1999 en San Isidro. Nuestra visión es aportar alimentos de calidad en un ambiente placentero a través de un servicio excelente.</p></div>
                     </div>
                 </div>
             </div>
         </section>
-
-{% endblock %}
-
-{% block infoExtra %}
-
-<li class="nav-item px-lg-4"><a style="text-align: center" class="nav-link text-uppercase" href="{% url 'RestaurantesFormulario' %}">Agregar restaurante</a></li>
 
 {% endblock %}
