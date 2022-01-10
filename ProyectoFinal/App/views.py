@@ -152,7 +152,7 @@ class CiudadesDelete(DeleteView): #hacer ciudades_confirm_delete
 class RestaurantesList(ListView):
         
     model = Restaurantes
-    template_name = "AppC/restaurantes_list.html"
+    template_name = "App/restaurantes_list.html" #modifique la C de AppC/
     
 
 #Detalle - "leer mas"

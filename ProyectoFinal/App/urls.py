@@ -23,18 +23,18 @@ urlpatterns = [
     path(r'^borrar/(?P<pk>\d+)$', views.CiudadesDelete.as_view(), name='CiudadesDelete'),
     
     #URLS Restaurantes
-    path('restaurantes/list/', views.RestaurantesList.as_view(), name="RestaurantesList"), 
-    path(r'^(?P<pk>\d+)$', views.RestaurantesDetalle.as_view(), name='RestaurantesDetail'), 
-    path(r'^nuevo$', views.RestaurantesCreacion.as_view(), name='RestaurantesNew'), #esta url es para crear
-    path(r'^editar/(?P<pk>\d+)$', views.RestaurantesUpdate.as_view(), name='RestaurantesEdit'),
-    path(r'^borrar/(?P<pk>\d+)$', views.RestaurantesDelete.as_view(), name='RestaurantesDelete'),
+    path('restaurantes/list/', views.RestaurantesList.as_view(), name='RestaurantesList'), 
+    path(r'^(?P<pk>\d+)1$', views.RestaurantesDetalle.as_view(), name='RestaurantesDetail'), 
+    path(r'^nuevo1$', views.RestaurantesCreacion.as_view(), name='RestaurantesNew'), #esta url es para crear
+    path(r'^editar/(?P<pk>\d+)1$', views.RestaurantesUpdate.as_view(), name='RestaurantesEdit'),
+    path(r'^borrar/(?P<pk>\d+)1$', views.RestaurantesDelete.as_view(), name='RestaurantesDelete'),
     
     #URLS ALOJAMIENTOS
-    path('alojamientos/list/', views.AlojamientosList.as_view(), name="AlojamientosList"), 
-    path(r'^(?P<pk>\d+)$', views.AlojamientosDetalle.as_view(), name='AlojamientosDetail'), 
-    path(r'^nuevo$', views.AlojamientosCreacion.as_view(), name='AlojamientosNew'), #esta url es para crear
-    path(r'^editar/(?P<pk>\d+)$', views.AlojamientosUpdate.as_view(), name='AlojamientosEdit'),
-    path(r'^borrar/(?P<pk>\d+)$', views.AlojamientosDelete.as_view(), name='AlojamientosDelete'),
+    path('alojamientos/list/', views.AlojamientosList.as_view(), name='AlojamientosList'), 
+    path(r'^(?P<pk>\d+)2$', views.AlojamientosDetalle.as_view(), name='AlojamientosDetail'), 
+    path(r'^nuevo2$', views.AlojamientosCreacion.as_view(), name='AlojamientosNew'), #esta url es para crear
+    path(r'^editar/(?P<pk>\d+)2$', views.AlojamientosUpdate.as_view(), name='AlojamientosEdit'),
+    path(r'^borrar/(?P<pk>\d+)2$', views.AlojamientosDelete.as_view(), name='AlojamientosDelete'),
     
     path('login/', views.login_request, name='Login'),
     path('register/', views.register, name='Register'),
