@@ -4,7 +4,7 @@ Participantes: Sol Renzi y Valentina Corrales
 
 Blog de Viajes - Descubriendo el Mundo
 
-La idea del blog es que los visitantes puedan aconsejar sobre Ciudades, Restaurantes y Alojamiento
+La idea del blog es que los visitantes puedan aconsejar sobre Ciudades, Restaurantes y Alojamientos.
 
 Ejecución
 
@@ -26,6 +26,7 @@ Ejecución
 
 Valen se encargó del armado en general del proyecto. Estructura, armado de views, urls y templates.
 
-Sol se encargó del README, Test. Con respecto a la Web, agregó fotos y textos, corrigió errores en el código para el link de visualización de Base de datos, y los links de las instancias de modificación. 
+Sol se encargó de algunos crud, del README, Test. Con respecto a la Web, agregó fotos y textos, corrigió errores en el código para el link de visualización de Base de datos, y los links de las instancias de modificación. 
 
 Vivimos en distintos paises, por lo que virtualmente estuvimos en contacto, mantuvimos reuniones y armamos juntas el video de demo y el login.
+

@@ -38,8 +38,19 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Ciudades' %}">Ciudades</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Restaurantes' %}">Restaurantes</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Alojamientos' %}">Alojamientos</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Contactanos' %}">Contactanos</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'About' %}">Acerca de nosotros</a></li>
+                        
+                        {% if not request.user.is_authenticated %}
+                        <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>
+                        {% endif %}
+        
+        
+                        {% if request.user.is_authenticated %}
+                        <li class="sidebar-nav-item"><a href="{% url 'Logout' %}">Usuario: {{ user.username }} - Logout</a></li>
+                        
+                        {% endif %}
+        
+ 
                     </ul>
                 </div>
             </div>

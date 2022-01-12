@@ -12,7 +12,35 @@
     {% endblock %}
 
     {% block contenidoInfo %}
+
+    <h3 style="text-align: center; color: aqua;"> {{mensaje}}</h3>
         <h1 style="color: white; text-align: center;"> En este blog de viajes podrás encontrar información sobre ciudades, restaurantes y alojamientos. </h1>              
     
+        <br>
+        <br>
+
+        {% if not request.user.is_authenticated %}
+
+        <h3 style="color: chartreuse; text-align: center;"> Si ya tienes un usurario: </h3>
+
+        <li class="nav-item px-lg-4" style="text-align: center;"><a class="nav-link text-uppercase" href="{% url 'Login' %}">HACER LOGIN</a></li>
+
+        <br>
+        
+        <h3 style="text-align: center; color: chartreuse;">Si aun no cuentas con un usuario, accede al siguiente enlace:</h3>
+        
+        <li class="nav-item px-lg-4" style="text-align: center;" ><a class="nav-link text-uppercase" href="{% url 'Register' %}"> Quiero registrarme!</a></li>
+
+        <h5 style="text-align: center; color: cornsilk;" >Recuerda que para ser parte del blog (agregar ciudades, restaurantes y alojamientos) debes estar logeado!!</h5>
+
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+
+        <li class="sidebar-nav-item" style="color: aliceblue; text-align: center;"><a href="{% url 'EditarPerfil' %}"> {{ user.username }} - Ingresa aqui si quieres editar tu perfil! </a></li>
+        
+        {% endif %}
+
     {% endblock %}
+
      

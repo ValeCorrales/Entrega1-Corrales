@@ -2,8 +2,11 @@ from django.http.response import ResponseHeaders
 from django.shortcuts import render
 from django.http import HttpResponse
 from App.models import Ciudades, Restaurantes, Alojamientos, Comentario
-from App.forms import AlojamientoFormulario, RestaurantesFormulario, CiudadesFormulario, ContactanosFormulario, UserRegisterForm
+from App.forms import AlojamientoFormulario, RestaurantesFormulario, CiudadesFormulario, UserRegisterForm, UserEditForm
 
+from django.contrib.auth.models import User
+
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -87,7 +90,7 @@ def contactanos(request):
         miFormulario3 = RestaurantesFormulario()
         return render(request, "App/restaurantesFormulario.html", {"miFormulario3":miFormulario3})
     
-def contactanosFormulario(request):
+#def contactanosFormulario(request):
     
     if request.method == "POST":
         miFormulario4 = ContactanosFormulario(request.POST)
@@ -118,6 +121,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 #Leer
+#@login_required
 class CiudadesList(ListView):
         
    model = Ciudades
@@ -133,10 +137,11 @@ class CiudadesDetalle(DetailView):
 class CiudadesCreacion(CreateView): #hacer ciudades_form.html
     
     model = Ciudades
-    success_url = "../ciudades/list" # cuando terminas de crear la ciudad volve a la lista de ciudades
+    success_url = "ciudades/list" # cuando terminas de crear la ciudad volve a la lista de ciudades
     fields = ["nombre", "pais", "continente", "calificacion"] #estos son los elementos que quiero que se carguen
     
 #Modificar: update
+#@login_required
 class CiudadesUpdate(UpdateView): #este te lleva al ciudades_form tambien
        
     model = Ciudades
@@ -144,6 +149,7 @@ class CiudadesUpdate(UpdateView): #este te lleva al ciudades_form tambien
     fields = ["nombre", "pais", "continente", "calificacion"]
     
 #Borrar
+#@login_required
 class CiudadesDelete(DeleteView): #hacer ciudades_confirm_delete    
     
     model = Ciudades
@@ -165,10 +171,11 @@ class RestaurantesDetalle(DetailView):
 class RestaurantesCreacion(CreateView): 
     
     model = Restaurantes
-    success_url = "../restaurantes/list" 
+    success_url = "restaurantes/list" 
     fields = ["nombre", "tipoDeComida", "calificacion"] #estos son los elementos que quiero que se carguen
     
 #Modificar: update
+#@login_required
 class RestaurantesUpdate(UpdateView):
        
     model = Restaurantes
@@ -176,6 +183,7 @@ class RestaurantesUpdate(UpdateView):
     fields = ["nombre", "tipoDeComida", "calificacion"]
     
 #Borrar
+#@login_required
 class RestaurantesDelete(DeleteView):   
     
     model = Restaurantes
@@ -195,10 +203,11 @@ class AlojamientosDetalle(DetailView):
 class AlojamientosCreacion(CreateView): 
     
     model = Alojamientos
-    success_url = "../alojamientos/list" 
+    success_url = "alojamientos/list" 
     fields = ["nombre", "tipoDeAlojamiento", "calificacion"] #estos son los elementos que quiero que se carguen
     
 #Modificar: update
+#@login_required
 class AlojamientosUpdate(UpdateView): 
        
     model = Alojamientos
@@ -206,6 +215,7 @@ class AlojamientosUpdate(UpdateView):
     fields = ["nombre", "tipoDeAlojamiento", "calificacion"]
     
 #Borrar
+#@login_required
 class AlojamientosDelete(DeleteView):   
     
     model = Alojamientos
@@ -213,6 +223,8 @@ class AlojamientosDelete(DeleteView):
     
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
+
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == "POST":
@@ -223,11 +235,10 @@ def register(request):
             username=form.cleaned_data["username"] 
             form.save() 
             
-            return render(request, "App/inicio.html", {"mensaje":f"Bienvenidooo {username} - tu usuario fue creado!!!"})
+            return render(request, "App/inicio.html", {"mensaje":f"Bienvenidooo {username} - tu usuario fue creado!!! Hace click en _Hacer login_ para ingresar con tu cuenta!!"})
     
     else: #si la request no tenia un metodo post, se genera el userregisterform
         
-        #form = UserCreationForm() - no se porq ponemos esto!!
         form= UserRegisterForm()
         
     return render(request, "App/register.html", {"form": form})
@@ -243,11 +254,12 @@ def login_request(request):
             
             usuario = form.cleaned_data.get("username")
            
-            contrasenia= form.cleaned_data.get("password")
+            contra= form.cleaned_data.get("password")
             
-            user = authenticate(username=usuario, password=contrasenia)
+            user = authenticate(username=usuario, password=contra)
         
             if user is not None: 
+                
                 login(request, user)
                 
                 return render(request, "App/inicio.html", {"mensaje":f"Bienvenidooo {usuario}!!!"})
@@ -261,7 +273,35 @@ def login_request(request):
     
     form = AuthenticationForm()
     
-    return render (request, "App/login.html", {"form":form})
+    return render(request, "App/login.html", {"form":form})
+
+@login_required
+def editarPerfil(request):
+
+    usuario = request.user
+
+    if request.method == 'POST':
+
+        miFormulario = UserEditForm(request.POST)
+
+        if miFormulario.is_valid():
+
+            informacion = miFormulario.cleaned_data
+
+            usuario.email = informacion['email']
+            usuario.password1 = informacion['password1']
+            usuario.password2 = informacion['password2']
+
+            usuario.save()
+
+            return render(request, "App/inicio.html")
+
+    else:
+
+        miFormulario = UserEditForm(initial={'email':usuario.email})
+
+
+    return render(request, "App/editarPerfil.html", {"miFormulario":miFormulario, "usuario":usuario})
 
 
         
