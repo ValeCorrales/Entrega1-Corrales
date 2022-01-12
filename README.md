@@ -30,3 +30,5 @@ Sol se encarg√≥ de algunos crud, del README, Test. Con respecto a la Web, agreg√
 
 Vivimos en distintos paises, por lo que virtualmente estuvimos en contacto, mantuvimos reuniones y armamos juntas el video de demo y el login.
 
+Excel con pruebas: https://docs.google.com/spreadsheets/d/1oD4xmYWG55PRhVXKw0pdnDAAJocnja-d/edit?usp=sharing&ouid=102657966966556997646&rtpof=true&sd=true
+
